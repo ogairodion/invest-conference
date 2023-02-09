@@ -1,0 +1,36 @@
+.footer {
+    font-size: 18px;
+    line-height: 120%;
+    padding: 39px 0;
+
+    @media screen and (max-width: 600px) {
+        padding: 32px 0 42px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 600px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__social {
+        margin-right: 13px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

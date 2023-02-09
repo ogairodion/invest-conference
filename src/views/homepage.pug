@@ -1,0 +1,26 @@
+extends layouts/default
+include helpers/_mixins-default
+include helpers/_mixins-custom
+
+block variables
+  - const title = "Invest Heroes"
+
+block content
+  .arrow-up.hidden
+    img(src="img/svg/arrow-up.svg", alt="")
+  include ../blocks/modules/header/header.pug
+  main.main
+    include ../blocks/modules/main-top/main-top.pug
+    include ../blocks/modules/speakers/speakers.pug
+    include ../blocks/modules/special/special.pug
+    include ../blocks/modules/program/program.pug
+    include ../blocks/modules/tickets/tickets.pug
+    include ../blocks/modules/prices/prices.pug
+    include ../blocks/modules/contacts/contacts.pug
+  include ../blocks/modules/footer/footer.pug
+  include ../blocks/modules/popup/popup.pug
+
+
+block scripts
+  script(src="js/vendor.js")
+  script(src="js/main.js")

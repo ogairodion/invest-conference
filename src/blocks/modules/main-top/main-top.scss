@@ -1,0 +1,97 @@
+.main-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1010px;
+    color: #fff;
+    background-image: url('.././img/main-top/bg.jpg');
+    background-color: linear-gradient(180deg, rgba(217, 217, 217, 0) -4.25%, #233C5F 85.34%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @media screen and (max-width: 1199px) {
+        min-height: 800px;
+    }
+
+    @media screen and (max-width: 600px) {
+        min-height: 636px;
+        background: url('.././img/main-top/bg-mobile.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__wrapper {
+        text-align: center;   
+    }
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-size: 73px;
+        line-height: 1;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 46px;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 50px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 34px;
+        }
+    }
+
+    &__when {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 37px;
+        line-height: 120%;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 27px;
+        }
+    }
+
+    &__date {
+        color: #70CBFF;
+    }
+
+    &__place {
+        font-size: 25px;
+        line-height: 120%;
+        margin-bottom: 66px;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 17px;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    &__btn {
+        font-size: 24px;
+        line-height: 1;
+        padding: 22px 70px;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1199px) {
+            font-size: 22px;
+            padding: 12px 44px;
+        }
+    }
+}

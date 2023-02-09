@@ -1,0 +1,71 @@
+.popup {
+    display: none;
+    width: auto;
+    max-width: 746px;
+    color: #1B3460;
+    background: #fff;
+    padding: 70px 96px;
+    
+    @media screen and (max-width: 600px) {
+        padding: 60px 26px 50px;
+    }
+    .form {
+        &__title {
+            font-size: 57px;
+            line-height: 120%;
+            font-weight: 900;
+            color: #2B74F5;
+            margin-bottom: 42px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 35px;
+                margin-bottom: 38px;
+            }
+        }
+
+        &__inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__input {
+            padding-bottom: 7px;
+            border-bottom: 1px solid #1B3460;
+            background: none;
+            margin-bottom: 44px;
+
+            @media screen and (max-width: 600px) {
+                margin-bottom: 39px;
+                padding-bottom: 3px;
+            }
+        }
+
+        &__checkbox {
+            font-size: 13px;
+            line-height: 120%;
+            color: #1B3460;
+            margin-bottom: 50px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 10px;
+                margin-bottom: 35px;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        &__btn {
+            color: #fff;
+            font-size: 24px;
+            line-height: 1;
+            padding: 22px 70px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 20px;
+                padding: 12px 24px;
+            }
+        }
+    }
+}

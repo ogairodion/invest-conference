@@ -1,0 +1,145 @@
+-
+    const programs = [
+        {
+            icon: 'loader',
+            title: 'МАСТЕР-КЛАСС ПО РЫНКУ КРИПТОВАЛЮТ',
+            description: '',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '90 минут',
+                },
+                {
+                    icon: 'man',
+                    title: 'Кто выступает',
+                    text: 'Валерий Сенько',
+                },
+            ]
+        },
+        {
+            icon: 'one',
+            title: '<span>СЕКЦИЯ</span> BIG PICTURE',
+            description: '<p>Ситуация в мире, перспективы ключевых классов активов</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '60 минут',
+                    class: 'timing',
+                },
+                {
+                    icon: 'man',
+                    title: 'Кто выступает',
+                    text: 'Сергей Пирогов, Иван Белов, Валерий Сенько',
+                },
+            ]
+        },
+        {
+            icon: 'two',
+            title: '<span>СЕКЦИЯ</span> PITCH',
+            description: '<p>Каждый спикер поделится одной идеей из своей сферы, на которую поставит свои деньги</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '60 минут',
+                    class: 'timing',
+                },
+                {
+                    icon: 'man',
+                    title: 'Кто выступает',
+                    text: 'Все спикеры и специальные гости',
+                },
+            ]
+        },
+        {
+            icon: 'break',
+            title: 'ПЕРЕРЫВ',
+            description: '<p>Переходим в банкетный зал, где будут ждать фуршет и спикеры, готовые к общению в неформальной обстановке.</p><p>У каждого спикера будет островок и тема к открытой дискуссии с участниками</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '40 минут',
+                    class: 'timing',
+                },
+            ]
+        },
+        {
+            icon: 'three',
+            title: '<span>СЕКЦИЯ</span> БУДУЩЕЕ ЭКОНОМИКИ РОССИИ ',
+            description: '<p>Рубль, процентные ставки, вырастет ли фондовый рынок</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '40 минут',
+                    class: 'timing',
+                },
+                {
+                    icon: 'man',
+                    title: 'Кто выступает',
+                    text: 'Сергей Пирогов',
+                },
+            ]
+        },
+        {
+            icon: 'four',
+            title: '<span>СЕКЦИЯ</span> ДИСКУССИЯ',
+            description: '<p>Поговорим о правильном распределении сбережений в текущих условиях (с учетом ограничений на инвестиции, рисков это уже непросто)</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: '60 минут',
+                    class: 'timing',
+                },
+                {
+                    icon: 'man',
+                    title: 'Кто выступает',
+                    text: 'Все спикеры в формате панельной конференции с модератором',
+                },
+            ]
+        },
+        {
+            icon: 'five',
+            title: '<span>СЕКЦИЯ</span> СВОБОДНОЕ ОБЩЕНИЕ',
+            description: '<p>Переходим в банкетный зал и общаемся друг с другом и спикерами в сопровождении приятной музыки</p>',
+            info: [
+                {
+                    icon: 'time',
+                    title: 'Тайминг',
+                    text: 'ДО 00:00',
+                    class: 'timing',
+                },
+            ]
+        }
+    ]
+
+section.program#program
+    .program__img.program__img-right
+        img(src="img/svg/right.svg", alt="")
+    .program__img.program__img-left
+        img(src="img/svg/left.svg", alt="")
+    .program__img.program__dots
+        img(src="img/svg/dots.svg", alt="")
+    .l-default 
+        h2.program__title.title.title--h2 Программа
+        .program__items
+            each program in programs
+                .program__item
+                    .program__item-icon
+                        img(src="img/svg/"+ program.icon +".svg", alt="")
+                    .program__item-content
+                        .program__item-top
+                            .program__item-title!= program.title
+                            .program__item-description!= program.description
+                        .program__item-info.program__info
+                            each program_item in program.info
+                                .program__info-item(class=program_item.class)
+                                    .program__info-title
+                                        .program__info-title--icon
+                                            img.lazy(data-src="img/svg/"+ program_item.icon +".svg", alt="")
+                                        .program__info-title--text= program_item.title
+                                    .program__info-text!= program_item.text

@@ -1,0 +1,39 @@
+-
+    const prices = [
+        {
+            title: 'Конференция',
+            description: '',
+            price: '8 990 руб',
+            list: ['Участие в конференции', 'Фуршет', 'Общение со спикерами и гостями', 'Перед началом основной конференции, корифеи рынка криптовалют, расскажут поделятся практическим опытом для участников мастер-класса, а также ответят на ваши вопросы']
+        },
+        {
+            title: 'Конференция',
+            description: '+ мастер-класс по криптовалюте',
+            price: '18 990 руб',
+            list: ['Участие в конференции', 'Фуршет', 'Общение со спикерами и гостями', 'Перед началом основной конференции, корифеи рынка криптовалют, расскажут поделятся практическим опытом для участников мастер-класса, а также ответят на ваши вопросы']
+        }
+    ]
+section.prices#prices
+    .prices__img.prices__dots
+        img(src="img/svg/dots.svg", alt="")
+    .l-default  
+        h2.prices__title.title.title--h2 ТАРИФЫ
+        .prices__items.swiper-container
+            .prices__items-wrapper.swiper-wrapper
+                each price in prices
+                    .prices__item.swiper-slide
+                        .prices__item-subtitle тариф
+                        .prices__item-top
+                            .prices__item-title= price.title
+                            .prices__item-description= price.description
+                        .prices__item-price= price.price
+                        .prices__item-label включает в себя
+                        ul.prices__item-list
+                            each price_list_item in price.list
+                                li.prices__item-text= price_list_item
+                        a.prices__item-btn.btn.btn--blue(href="") Участвовать
+        .slider-arrows
+            .slider-arrow.slider-arrow-prev
+                img(src="img/svg/arrow.svg", alt="")
+            .slider-arrow.slider-arrow-next
+                img(src="img/svg/arrow.svg", alt="")

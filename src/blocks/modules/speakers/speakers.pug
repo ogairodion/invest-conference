@@ -1,0 +1,37 @@
+-
+    const speakers = [
+        {
+            name: 'Сергей Пирогов',
+            position: 'CEO Invest Heroes',
+            text: 'Основатель Invest Heroes. Портфельный управляющий с 8 летним стажем. Инвестбанкир совершавший сделки на 5млрд$+',
+            img: 'pirogov',
+        },
+        {
+            name: 'Иван Белов',
+            position: 'Со-основатель Invest Heroes',
+            text: 'Портфельный управляющий с 8-летним стажем Последние 2 года занимал позицию директора по инвестконсультированию состоятельных клиентов в одном из крупнейших банков России',
+            img: 'belov',
+        },
+        {
+            name: 'Александр Сайганов',
+            position: 'Head of Research',
+            text: 'Построил с нуля команду equity research аналитики, которая добилась глобального профессионального признания таких агрегаторов аналитики, как Refinitiv (Thomson reuters) и FactSet, став лучшей аналитической командой по ряду российских компаний. До Invest Heroes работал в ряде проектов, связанных с инвестициями, а также в глобальном инвестбанке CreditSuisse.',
+            img: 'sayganov',
+        }
+    ]
+
+section.speakers#speakers
+    .speakers__dots
+        img(src="img/svg/dots.svg", alt="")
+    .l-default 
+        h2.speakers__title.title.title--h2 Спикеры
+        .speakers__items
+            .speakers__items-wrapper
+                each speaker in speakers
+                    .speakers__item
+                        .speakers__item-img
+                            +webp(['speakers/' + speaker.img], 'png', '')
+                        .speakers__item-info
+                            .speakers__item-name= speaker.name
+                            .speakers__item-position= speaker.position
+                            .speakers__item-text!= speaker.text

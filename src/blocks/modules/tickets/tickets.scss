@@ -1,0 +1,63 @@
+.tickets {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+
+    @media screen and (max-width: 1199px) {
+        padding: 80px 0 40px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        padding: 45px 0;
+    }
+
+    &__img {
+        position: absolute;
+        top: -200px;
+        right: 0;
+        
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+
+    &__item {
+        max-width: fit-content;
+        text-align: center;
+        color: #253B59;
+        background: #fff;
+        border-radius: 10px;
+        padding: 37px 45px;
+        margin: 0 auto; 
+        @media screen and (max-width: 600px) {
+            padding: 23px 26px;
+        }
+
+        &-text {
+            font-size: 32px;
+            line-height: 1;
+            font-weight: 600;
+            color: #126DC0;
+            margin-bottom: 12px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 19px;
+                margin-bottom: 8px;
+            }
+        }
+
+        &-number {
+            font-size: 70px;
+            line-height: 1;
+            font-weight: 800;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 600px) {
+                font-size: 33px;
+            }
+        }
+    }
+}

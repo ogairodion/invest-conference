@@ -1,0 +1,106 @@
+-
+    const specials = [
+        {
+            text: '<p>Аналитический проект и Телеграм-канал, ориентированный на поиск недооцененных акций и инвестирование в них, имеющий в управлении активы на более 1,5 млрд руб.</p><p>Основателем проекта является Кирилл Кузнецов — банкир с 15-летним опытом работы в сфере M&A advisory и private equity.</p>',
+            img: 'enhanced',
+            speakers: [
+                {
+                    img: 'kuznetzov',
+                    name: 'Кирилл Кузнецов', 
+                    position: 'Основатель проекта',
+                },
+            ]
+        },
+        {
+            text: '<p>Команда профессиональных инвесторов во главе с Антоном Бариновым. Основным ориентиром является доверительное управление капиталом на глобальных рынках, а также аналитика фондового рынка и advisory консультирование.</p><p> Антон Баринов является частым гостем канала РБК и автором ряда статей по инвестиционной тематике в Forbes, Republic.</p>',
+            img: 'index',
+            speakers: [
+                {
+                    img: 'barinov',
+                    name: 'Антон Баринов', 
+                    position: 'Основатель компании',
+                },
+            ]
+        },
+        {
+            text: '<p>Команда опытных инвесторов, ориентированная на проведение глубокой экспертизы фондового рынка и рынка криптовалют. Совместно с Invest Heroes разрабатывает уникальный продукт для инвесторов в криптовалюты, за основу в котором берется опыт модельных портфелей и клиентского сервиса IH.</p>',
+            img: 'barbakan',
+            speakers: [
+                {
+                    img: 'kovkin',
+                    name: 'Никита Ковкин', 
+                    position: 'основатель фонда',
+                },
+                {
+                    img: 'nazarov',
+                    name: 'Иван Назаров', 
+                    position: 'аналитик фонда',
+                },
+                {
+                    img: 'senko',
+                    name: 'Валерий Сенько', 
+                    position: 'основатель фонда',
+                },
+                {
+                    img: 'strizhkov',
+                    name: 'Денис Стрижов', 
+                    position: 'аналитик фонда',
+                },
+            ]
+        },
+        {
+            text: '<p>Управляющая компания «Арикапитал» основана в ноябре 2012 года. Одним из основателей выступил  Алексей Третьяков — на сегодняшний день инвестбанкир с 20-летним стажем. Частная УК создавалась в лучших традиция family office и спустя 10 лет впервые выходит на рынок частных инвесторов совместно с командой Invest Heroes.</p><p> До создания АриКапитала Алексей Третьяков руководил портфельными инвестициями НОМОС-банка объемом более 50 млрд руб., а также операциями на рынке FOREX, МБК, РЕПО.</p>',
+            img: 'arikapital',
+            speakers: [
+                {
+                    img: 'tretyakov',
+                    name: 'Алексей Третьяков', 
+                    position: 'Генеральный директор',
+                },
+            ]
+        },
+        {
+            text: '<p>Проект, специализирующийся на сдаче в аренду смарт-офисов, расположенных в центре Москвы.</p><p> Основателями проекта являются Сергей Потанин и Дмитрий Морозов — предприниматели и профессиональные инвесторы в рынок недвижимости с опытом управления и эксплуатации коммерческой недвижимости уже более 10 лет.</p>',
+            img: 'bloks',
+            speakers: [
+                {
+                    img: 'potanin',
+                    name: 'Сергей Потанин', 
+                    position: 'Основатель сети',
+                },
+                {
+                    img: 'morozov',
+                    name: 'Дмитрий Морозов', 
+                    position: 'Управляющий',
+                },
+            ]
+        },
+    ]
+
+section.special#special
+    .special__dots
+        img(src="img/svg/dots.svg", alt="")
+    .l-default 
+        h2.special__title.title.title--h2 Специальные гости
+        .special__wrapper
+            .special__items.swiper-container
+                .swiper-wrapper
+                    each special in specials
+                        .swiper-slide.special__item
+                            .special__item-img
+                                +webp(['special/logos/' + special.img], 'png', '')
+                            .special__item-info
+                                .special__item-speakers
+                                    each special_speaker in special.speakers
+                                        .special__item-speaker
+                                            .special__item-photo
+                                                +webp(['special/speakers/' + special_speaker.img], 'jpg', '')
+                                            .special__item-speaker--info
+                                                .special__item-name= special_speaker.name
+                                                .special__item-position= special_speaker.position
+                                .special__item-text!= special.text
+            .slider-arrows
+                .slider-arrow.slider-arrow-prev
+                    img(src="img/svg/arrow.svg", alt="")
+                .slider-arrow.slider-arrow-next
+                    img(src="img/svg/arrow.svg", alt="")
